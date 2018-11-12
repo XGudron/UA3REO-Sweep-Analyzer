@@ -1,0 +1,24 @@
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csprojResolveAssemblyReference.cache
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO_Sweep_Analyzer.mainForm.resources
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO_Sweep_Analyzer.Properties.Resources.resources
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csproj.GenerateResource.cache
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csproj.CoreCompileInputs.cache
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\bin\Debug\UA3REO Sweep Analyzer.exe.config
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\bin\Debug\UA3REO Sweep Analyzer.exe
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\bin\Debug\UA3REO Sweep Analyzer.pdb
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\bin\Debug\System.Windows.Forms.DataVisualization.dll
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csproj.CopyComplete
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.exe
+d:\Dropbox\Develop\Projects\SweepAnalyzer\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.pdb
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\bin\Debug\UA3REO Sweep Analyzer.exe.config
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\bin\Debug\UA3REO Sweep Analyzer.exe
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\bin\Debug\UA3REO Sweep Analyzer.pdb
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\bin\Debug\System.Windows.Forms.DataVisualization.dll
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csprojResolveAssemblyReference.cache
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO_Sweep_Analyzer.mainForm.resources
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO_Sweep_Analyzer.Properties.Resources.resources
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csproj.GenerateResource.cache
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csproj.CoreCompileInputs.cache
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.csproj.CopyComplete
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.exe
+d:\Dropbox\Develop\Projects\UA3REO Sweep Analyzer\Desktop\UA3REO Sweep Analyzer\obj\Debug\UA3REO Sweep Analyzer.pdb
