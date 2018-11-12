@@ -106,32 +106,44 @@ namespace UA3REO_Sweep_Analyzer
             stopButton.Visible = true;
             chart1.Series[1].Points.Clear();
 
-            double calibrateMaximum = 0;
-            if (chart1.Series[0].Points.Count > 0)
-                calibrateMaximum = chart1.Series[0].Points.Max(point => point.YValues[0]); //берём максимальный уровень из калибровочного прохода
-
-            for (int freq = startFreq; freq <= endFreq; freq += stepFreq)
+            bool firstrun = true;
+            while (repeatCheckBox.Checked || firstrun)
             {
-                if (stop) return;
-                if (freq > endFreq) freq = endFreq;
-                double val = getData(freq);
+                firstrun = false;
+                double calibrateMaximum = 0;
+                if (chart1.Series[0].Points.Count > 0)
+                    calibrateMaximum = chart1.Series[0].Points.Max(point => point.YValues[0]); //берём максимальный уровень из калибровочного прохода
 
-                if (radioButtonDBV.Checked) //dbV
+                for (int freq = startFreq; freq <= endFreq; freq += stepFreq)
                 {
-                    if (val > 0)
-                        val = 20 * Math.Log10(val);
-                    else
-                        val = -120;
+                    if (stop) return;
+                    if (freq > endFreq) freq = endFreq;
+                    double val = getData(freq);
+
+                    if (radioButtonDBV.Checked) //dbV
+                    {
+                        if (val > 0)
+                            val = 20 * Math.Log10(val);
+                        else
+                            val = -120;
+                    }
+
+                    double calibPoint = 0;
+                    if (chart1.Series[0].Points.Count > 0 && chart1.Series[0].Points.Where(point => point.XValue == freq).Count() > 0)
+                        calibPoint = chart1.Series[0].Points.Where(point => point.XValue == freq).First().YValues[0]; //выбираем соответствующее значение из калибровки
+                    double calibrateOffset = calibrateMaximum - calibPoint; //получаем насколько ниже значение калибровки от максимума уровню (из-за нелинейности диода и генератора)
+                    val = val + calibrateOffset; //корректировка испытуемых значений
+
+                    foreach(DataPoint old in chart1.Series[1].Points)
+                    {
+                        if (old.XValue == freq)
+                        {
+                            chart1.Series[1].Points.Remove(old);
+                            break;
+                        }
+                    }
+                    chart1.Series[1].Points.AddXY(freq,val);
                 }
-
-                double calibPoint = 0;
-                if (chart1.Series[0].Points.Count > 0 && chart1.Series[0].Points.Where(point => point.XValue == freq).Count() > 0)
-                    calibPoint = chart1.Series[0].Points.Where(point => point.XValue == freq).First().YValues[0]; //выбираем соответствующее значение из калибровки
-                double calibrateOffset = calibrateMaximum - calibPoint; //получаем насколько ниже значение калибровки от максимума уровню (из-за нелинейности диода и генератора)
-                val = val + calibrateOffset; //корректировка испытуемых значений
-
-                DataPoint dp = new DataPoint(freq, val);
-                chart1.Series[1].Points.Add(dp);
             }
             stopButton.Visible = false;
         }
@@ -173,6 +185,7 @@ namespace UA3REO_Sweep_Analyzer
 
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            stop = true;
             saveSettings();
         }
 
@@ -200,6 +213,12 @@ namespace UA3REO_Sweep_Analyzer
                 else
                     resultToolStripStatusLabel.Text = "-";
             }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            chart1.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
         }
     }
 }
