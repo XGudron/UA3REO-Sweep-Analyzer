@@ -220,5 +220,92 @@ namespace UA3REO_Sweep_Analyzer
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
         }
+
+        private void presetsButton_Click(object sender, EventArgs e)
+        {
+            presetsContextMenuStrip.Show(presetsButton,0,0);
+        }
+
+        private void presetsContextMenuStrip_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "0";
+            endFreqTextBox.Text = "55000000";
+            stepFreqTextBox.Text = "500000";
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "0";
+            endFreqTextBox.Text = "30000000";
+            stepFreqTextBox.Text = "100000";
+        }
+
+        private void mToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "1600000";
+            endFreqTextBox.Text = "2200000";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "3300000";
+            endFreqTextBox.Text = "4000000";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "6800000";
+            endFreqTextBox.Text = "7400000";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "9900000";
+            endFreqTextBox.Text = "10350999";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "13800000";
+            endFreqTextBox.Text = "14550000";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "17900000";
+            endFreqTextBox.Text = "18400000";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "20800000";
+            endFreqTextBox.Text = "21700000";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "24700000";
+            endFreqTextBox.Text = "25200000";
+            stepFreqTextBox.Text = "10000";
+        }
+
+        private void mToolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            startFreqTextBox.Text = "27800000";
+            endFreqTextBox.Text = "29900000";
+            stepFreqTextBox.Text = "10000";
+        }
     }
 }
