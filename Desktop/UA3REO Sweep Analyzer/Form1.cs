@@ -5,6 +5,7 @@ using System.IO.Ports;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
+using System.Globalization;
 
 namespace UA3REO_Sweep_Analyzer
 {
@@ -150,12 +151,15 @@ namespace UA3REO_Sweep_Analyzer
 
         private double getData(int freq)
         {
+            CultureInfo ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            ci.NumberFormat.CurrencyDecimalSeparator = ".";
+
             double res = 0;
             try
             {
                 if (!port.IsOpen) port.Open();
                 port.Write("GET " + freq + '\n');
-                res = double.Parse(port.ReadLine());
+                res = double.Parse(port.ReadLine(), NumberStyles.Any, ci);
             }
             catch
             {
@@ -200,14 +204,16 @@ namespace UA3REO_Sweep_Analyzer
             HitTestResult result = chart1.HitTest(e.X, e.Y);
             if (result.ChartElementType == ChartElementType.DataPoint)
             {
-                if (chart1.Series[0].Points.Count >= result.PointIndex)
-                    nowFreqtoolStripStatusLabel.Text = chart1.Series[0].Points[result.PointIndex].XValue.ToString();
+                if (chart1.Series[1].Points.Count >= result.PointIndex)
+                    nowFreqtoolStripStatusLabel.Text = chart1.Series[1].Points[result.PointIndex].XValue.ToString();
                 else
                     nowFreqtoolStripStatusLabel.Text = "-";
+
                 if (chart1.Series[0].Points.Count >= result.PointIndex)
                     calibToolStripStatusLabel.Text = chart1.Series[0].Points[result.PointIndex].YValues[0].ToString();
                 else
                     calibToolStripStatusLabel.Text = "-";
+
                 if (chart1.Series[1].Points.Count >= result.PointIndex)
                     resultToolStripStatusLabel.Text = chart1.Series[1].Points[result.PointIndex].YValues[0].ToString();
                 else
@@ -306,6 +312,11 @@ namespace UA3REO_Sweep_Analyzer
             startFreqTextBox.Text = "27800000";
             endFreqTextBox.Text = "29900000";
             stepFreqTextBox.Text = "10000";
+        }
+
+        private void resultToolStripStatusLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
